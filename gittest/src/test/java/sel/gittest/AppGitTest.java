@@ -55,6 +55,7 @@ public class AppGitTest {
 		});
 		
 		assertEquals("book - Google Search", driver.getTitle());
+		System.out.println(driver.getTitle());
 		
 		// Close the browser
 		driver.quit();
