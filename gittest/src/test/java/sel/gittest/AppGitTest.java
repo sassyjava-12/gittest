@@ -20,16 +20,12 @@ public class AppGitTest {
 	public void testGoogleSearch() {
 		
 		// Launch a new Chrome instance
-		//System.setProperty("webdriver.chrome.driver", "chromedriver.exe");
-		//WebDriver driver = new ChromeDriver();
+		System.setProperty("webdriver.chrome.driver", "chromedriver.exe");
+		WebDriver driver = new ChromeDriver();
 		
 		// Launch a new IE instance
-		System.setProperty("webdriver.ie.driver", "IEDriverServer.exe");
-		//System.setProperty("webdriver.ie.driver.loglevel", "TRACE");
-        //System.setProperty("webdriver.ie.driver.logfile", "log\\selenium.log");
-		//DesiredCapabilities capabilities = DesiredCapabilities.internetExplorer();
-		//capabilities.setCapability(InternetExplorerDriver.INTRODUCE_FLAKINESS_BY_IGNORING_SECURITY_DOMAINS,true); 
-		WebDriver driver = new InternetExplorerDriver();
+		//System.setProperty("webdriver.ie.driver", "IEDriverServer.exe");
+		//WebDriver driver = new InternetExplorerDriver();
 		
 		// Maximize the browser window
 		driver.manage().window().maximize();
