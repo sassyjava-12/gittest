@@ -1,13 +1,11 @@
 package sel.gittest;
 
-//import org.openqa.selenium.firefox.MarionetteDriver;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.By;
 import org.openqa.selenium.support.ui.ExpectedCondition;
 import org.openqa.selenium.support.ui.WebDriverWait;
-//import org.testng.annotations.Test;
 import static org.junit.Assert.*;
 import org.junit.Test;
 
@@ -16,10 +14,6 @@ public class AppGitTest {
 	@Test
 	public void testGoogleSearch() {
 		
-		// Launch a new Firefox instance
-		//System.setProperty("webdriver.gecko.driver", "geckodriver.exe");
-		//WebDriver driver = new MarionetteDriver();//FirefoxDriver();
-		
 		// Launch a new Chrome instance
 		System.setProperty("webdriver.chrome.driver", "chromedriver.exe");
 		WebDriver driver = new ChromeDriver();
@@ -27,7 +21,7 @@ public class AppGitTest {
 		// Maximize the browser window
 		driver.manage().window().maximize();
 		// Navigate to Google
-		driver.get("http://www.google.com");
+		driver.get("http://www.google.co.in");
 				
 		// Find the text input element by its name
 		WebElement element = driver.findElement(By.name("q"));
