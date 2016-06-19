@@ -3,10 +3,15 @@ package sel.gittest;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.ie.InternetExplorerDriver;
+import org.openqa.selenium.remote.DesiredCapabilities;
 import org.openqa.selenium.By;
 import org.openqa.selenium.support.ui.ExpectedCondition;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import static org.junit.Assert.*;
+
+import java.util.concurrent.TimeUnit;
+
 import org.junit.Test;
 
 public class AppGitTest {
@@ -15,8 +20,16 @@ public class AppGitTest {
 	public void testGoogleSearch() {
 		
 		// Launch a new Chrome instance
-		System.setProperty("webdriver.chrome.driver", "chromedriver.exe");
-		WebDriver driver = new ChromeDriver();
+		//System.setProperty("webdriver.chrome.driver", "chromedriver.exe");
+		//WebDriver driver = new ChromeDriver();
+		
+		// Launch a new IE instance
+		System.setProperty("webdriver.ie.driver", "IEDriverServer.exe");
+		//System.setProperty("webdriver.ie.driver.loglevel", "TRACE");
+        //System.setProperty("webdriver.ie.driver.logfile", "log\\selenium.log");
+		//DesiredCapabilities capabilities = DesiredCapabilities.internetExplorer();
+		//capabilities.setCapability(InternetExplorerDriver.INTRODUCE_FLAKINESS_BY_IGNORING_SECURITY_DOMAINS,true); 
+		WebDriver driver = new InternetExplorerDriver();
 		
 		// Maximize the browser window
 		driver.manage().window().maximize();
@@ -28,7 +41,7 @@ public class AppGitTest {
 		// Clear the existing text value
 		element.clear();
 		// Enter something to search for
-		element.sendKeys("Selenium testing tools cookbook");
+		element.sendKeys("book");
 		// Now submit the form
 		element.submit();
 		
@@ -37,11 +50,11 @@ public class AppGitTest {
 		new WebDriverWait(driver, 10).until(new
 		ExpectedCondition<Boolean>() {
 			public Boolean apply(WebDriver d) {
-				return d.getTitle().toLowerCase().startsWith("selenium testing tools cookbook");
+				return d.getTitle().toLowerCase().startsWith("book");
 			}
 		});
 		
-		assertEquals("Selenium testing tools cookbook - Google Search", driver.getTitle());
+		assertEquals("book - Google Search", driver.getTitle());
 		
 		// Close the browser
 		driver.quit();
